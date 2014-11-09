@@ -11,13 +11,3 @@
  *= require_self
  *= require_tree .
  */
-
-.img-right {
-    float: right;
-    margin: 0 0 10px 10px;
-}
-
-.img-left {
-    float: left;
-    margin: 0  10px 10px 0;
-}
