@@ -9,6 +9,7 @@
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<script>Turbolinks.enableProgressBar();</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
@@ -31,7 +32,7 @@
           <ul class="nav navbar-nav">
             <li><a href="/battle" class="<%= request.fullpath == '/' ? 'active' : '' %>">Battle of Savur-Mohyla</a></li>
             <!-- <li><a href="/bio" class="<%= request.fullpath == '/bio' ? 'active' : '' %>">Ihor's Biography</a></li> -->
-            <li><a href="/give" class="<%= request.fullpath == '/give' ? 'active' : '' %>">How You Can Help</a></li>
+            <!-- <li><a href="/give" class="<%= request.fullpath == '/give' ? 'active' : '' %>">How You Can Help</a></li> -->
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
