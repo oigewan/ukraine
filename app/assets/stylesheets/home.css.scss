@@ -9,11 +9,13 @@ body {
 .img-right {
   float: right;
   margin: 0 0 10px 10px;
+  display: inline-block;
 }
 
 .img-left {
   float: left;
   margin: 0  10px 10px 0;
+  display: inline-block;
 }
 
 .atf {

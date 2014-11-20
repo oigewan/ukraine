@@ -1,12 +1,3 @@
-<%
-
-   heros_of_ukraine_link = 'http://ukrgeroes.narod.ru/GordiychukIV.htm'
-   bbc_timeline_link = 'http://www.bbc.com/news/world-europe-27308526'
-   malaysian_airlines_link = 'http://www.bbc.com/news/world-europe-27308526'
-   rebels_link = 'http://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_17'
-   google_maps_link = 'https://www.google.com/maps/place/Hora+Savur+Mohyla,+Donetsk+Oblast,+Ukraine/@47.9218612,38.7405979,3a,75y,270h,90t/data=!3m5!1e1!3m3!1szOBfm04avMcAAAQYQQYiAg!2e0!3e11!4m2!3m1!1s0x40e1aba72b61c717:0x8d6738503d0f9b09?hl=en'
-   overhead_link = 'https://www.google.com/maps/place/Hora+Savur+Mohyla,+Donetsk+Oblast,+Ukraine/@47.8934963,38.7287291,18278m/data=!3m1!1e3!4m2!3m1!1s0x40e1aba72b61c717:0x8d6738503d0f9b09?hl=en'
-%>
 <div class="container">
 	<h1>The Battle of Savur-Mohyla</h1>
 	<h5><i>By Bill Campsey</i></h5>
@@ -15,8 +6,8 @@
 			<h5><b>Note from the author:</b></h5>
 			<p>
 				What you read below is taken from the facts as they were reported on a web
-				site for <a href="<%= heros_of_ukraine_link %>" target="_blank">Heroes of Ukraine</a>, a
-				<a href="<%= bbc_timeline_link %>" target="_blank">BBC timeline</a>, and Wikipedia.
+				site for <a href="<%= @heros_of_ukraine_link %>" target="_blank">Heroes of Ukraine</a>, a
+				<a href="<%= @bbc_timeline_link %>" target="_blank">BBC timeline</a>, and Wikipedia.
 				I have made some tactical evaluations to fill in the gaps between the facts. I use English conditional
 				verb forms (e.g., "must have" "should have") to give a clue that I am inserting my judgment to keep
 				continuity in the narrative. I invite readers with tactical expertise to critique my judgments. I will
@@ -33,11 +24,11 @@
 				was doomed. On 5 July, the president re-launched his government's offensive against the rebels, who
 				abandoned strongholds in northern Donetsk oblast; reducing the territory controlled by them. (See the
 				figure titled "Malaysian Airlines tragedy, 17 July"
-				<a href="<%= malaysian_airlines_link %>" target="_blank">here</a>.)
+				<a href="<%= @malaysian_airlines_link %>" target="_blank">here</a>.)
 			</p>
 			<p>
 				Then, on 17 July, Malaysia Airlines flight 17; a civilian aircraft flying on an internationally-prescribed
-				path was shot from the sky; <a href="<%= rebels_link %>" target="_blank">almost
+				path was shot from the sky; <a href="<%= @rebels_link %>" target="_blank">almost
 				surely by pro-Russian rebels</a>. This killing of 298 innocent souls compounded Mr. Putin's problems. Not only
 				were his proxies in Ukraine losing the ground battle to a newly-determined and improving Ukrainian military,
 				this terrible public relations failure severely degraded his ability to appear to the world as a reluctant
@@ -54,8 +45,8 @@
 	<p>
 		On 12 August, the colonel led a fourteen-man Special Forces patrol poetically named "Crimea" onto
 		the heights of Savur-Mohyla.
-		<a href="<%= google_maps_link %>" target="_blank">Google Maps</a>, makes it clear that the heights of this location
-		command observation to great distance. This <a href="<%= overhead_link %>" target="_blank">overhead view of the same location</a> illustrates that Savur-
+		<a href="<%= @google_maps_link %>" target="_blank">Google Maps</a>, makes it clear that the heights of this location
+		command observation to great distance. This <a href="<%= @overhead_link %>" target="_blank">overhead view of the same location</a> illustrates that Savur-
 		Mohyla commanded the only road that the Russians could use to make their invasion in this area.
 		Commanding heights, in military terms, convey at least two advantages. First, if the defender has
 		significant height over his enemy, the advancing foe must bring significantly greater forces to the fight in

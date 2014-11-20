@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+.flag-icon {
+    width: 25px;
+    margin-right: 7px;
+    position: relative;
+    top: -2px;
+}
