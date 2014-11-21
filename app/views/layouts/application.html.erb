@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Help Support Ihor Hordiychuk</title>
-	<meta property="og:title" content="Help Support Ihor Hordiychuk">
+  <title><%= session[:page_title] %></title>
+	<meta property="og:title" content="<%= session[:og_title] %>">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="http://<%= @lang_full_path %>">
 	<meta property="og:image" content="http://<%= @lang_root %>/assets/ihor_og.jpg">
-	<meta property="og:description" content="Colonel Ihor Hordiychuk has honorably served the people of Ukraine for many years, including during Russia's deplorable invasion of his homeland. Unfortunately, Col Hordiychuk was injured by shrapnel from Russian artillery, and he now fights for his life. He and many others like him need our help!">
+	<meta property="og:description" content="<%= session[:og_description] %>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<%= csrf_meta_tags %>
 
@@ -26,7 +26,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Ihor Hordiychuk</a>
+          <a class="navbar-brand" href="/"><%= session[:name] %></a>
         </div>
 
         <!-- Collect the nav links for toggling -->

@@ -10,12 +10,20 @@ class HomeController < ApplicationController
         @prefix = 'ua'
         @lang_name = 'Український'
         session[:language] = 'ua'
+        session[:name] = 'Ігора Гордійчука'
         session[:battle_title] = 'Бій за Савур-Могилу'
+        session[:page_title] = 'Підтримайте Ігора Гордійчука'
+        session[:og_title] = 'Підтримайте Ігора Гордійчука'
+        session[:og_description] = 'Полковник Гордійчук багато років віддано служив на благо Батьківщини та її народу,включаючи часи Російської окупації. Нажаль, полковник Гордійчук, під час захисту Вітчизни отримав важке поранення від розриву російського артилерійського снаряду і зараз він бореться за життя. Він та багато таких як він потребують твоєї допомоги. Не будь байдужим!!!'
       else
         @prefix = 'www'
         @lang_name = 'English'
         session[:language] = 'en'
+        session[:name] = 'Ihor Hordiychuk'
         session[:battle_title] = 'Battle of Savur-Mohyla'
+        session[:page_title] = 'Help Support Ihor Hordiychuk'
+        session[:og_title] = 'Help Support Ihor Hordiychuk'
+        session[:og_description] = "Colonel Ihor Hordiychuk has honorably served the people of Ukraine for many years, including during Russia's deplorable invasion of his homeland. Unfortunately, Col Hordiychuk was injured by shrapnel from Russian artillery, and he now fights for his life. He and many others like him need our help!"
     end
 
     host.unshift(lang) if host.length === 1
