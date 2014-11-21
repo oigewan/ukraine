@@ -18,6 +18,7 @@ class HomeController < ApplicationController
         session[:battle_title] = 'Battle of Savur-Mohyla'
     end
 
+    host.unshift(lang) if host.length === 1
     @root_server = host.join('.')
     @root_server += ':' + request.port.to_s if request.port
     @lang_root = @prefix + '.' + @root_server
