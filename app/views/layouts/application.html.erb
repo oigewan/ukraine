@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= session[:page_title] %></title>
-	<meta property="og:title" content="<%= session[:og_title] %>">
+  <title><%= @page_title %></title>
+	<meta property="og:title" content="<%= t('og.title') %>">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="http://<%= @lang_full_path %>">
-	<meta property="og:image" content="http://<%= @lang_root %>/assets/ihor_og.jpg">
-	<meta property="og:description" content="<%= session[:og_description] %>">
+	<meta property="og:url" content="<%= url_for(:only_path => false) %>">
+	<meta property="og:image" content="http://<%= @full_host %>/assets/ihor_og.jpg">
+	<meta property="og:description" content="<%= t('og.description') %>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<%= csrf_meta_tags %>
 
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
 
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -26,20 +26,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><%= session[:name] %></a>
+          <a class="navbar-brand" href="/"><%= t('name') %></a>
         </div>
 
         <!-- Collect the nav links for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/battle" class="<%= request.fullpath == '/battle' ? 'active' : '' %>"><%= session[:battle_title] %></a></li>
-            <!-- <li><a href="/bio" class="<%= request.fullpath == '/bio' ? 'active' : '' %>">Ihor's Biography</a></li> -->
-            <!-- <li><a href="/give" class="<%= request.fullpath == '/give' ? 'active' : '' %>">How You Can Help</a></li> -->
+						<% @nav_actions.each do |action| %>
+            	<li class="<%= action_name == action ? 'active' : '' %>"><a href="<%= action_name == action ? '#' : "/#{action}" %>"><%= t("#{controller_name}.#{action}.title") %></a></li>
+						<% end %>
+						<%# TODO: Remove this once translation for home page is gtg %>
 						<% if request.path == '/battle' %>
-							<% if session[:language] != 'en' %>
-								<li><a href="http://www.<%= @root_server %><%= request.path %>"><img src="/assets/en_icon.png" class="flag-icon">English</a></li>
-							<% elsif session[:language] != 'ua' %>
-								<li><a href="http://ua.<%= @root_server %><%= request.path %>"><img src="/assets/ua_icon.png" class="flag-icon">Український</a></li>
+							<% @other_locales.each do |l| %>
+								<li><a href="http://<%= t('prefix', :locale => l) %>.<%= @no_lang_host %><%= request.path %>"><img class="flag-icon" src="/assets/<%= l.to_s %>_icon.png"><%= t('lang_name', :locale => l) %></a></li>
 							<% end %>
 						<% end %>
           </ul>

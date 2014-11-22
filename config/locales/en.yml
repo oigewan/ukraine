@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home:
+    battle:
+      title: 'Battle of Savur-Mohyla'
+    index:
+      title: 'Help Support Ihor Hordiychuk'
+  og:
+    title: 'Help Support Ihor Hordiychuk'
+    description: "Colonel Ihor Hordiychuk has honorably served the people of Ukraine for many years, including during Russia's deplorable invasion of his homeland. Unfortunately, Col Hordiychuk was injured by shrapnel from Russian artillery, and he now fights for his life. He and many others like him need our help!"
+  prefix: 'www'
+  lang_name: 'English'
+  name: 'Ihor Hordiychuk'
