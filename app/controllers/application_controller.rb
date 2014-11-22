@@ -28,8 +28,6 @@ class ApplicationController < ActionController::Base
     if request.subdomains.length > 0
       @no_lang_host = request.host.split('.').reject { |a| a == request.subdomains.first }.join('.')
     end
-
-    @full_host = "#{I18n.t('prefix')}.#{@no_lang_host}"
   end
 
   def get_other_locales
