@@ -5,7 +5,7 @@
 	<meta property="og:title" content="<%= t('og.title') %>">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="<%= url_for(:only_path => false) %>">
-	<meta property="og:image" content="http://<%= @full_host %>/assets/ihor_og.jpg">
+	<meta property="og:image" content="http://<%= t('prefix') %>.ihorhordiychuk.com/assets/ihor_og.jpg">
 	<meta property="og:description" content="<%= t('og.description') %>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<%= csrf_meta_tags %>
