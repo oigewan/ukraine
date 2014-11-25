@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
     if request.subdomains.length > 0
       @no_lang_host = request.host.split('.').reject { |a| a == request.subdomains.first }.join('.')
     end
+    @no_lang_host += ":#{request.port}" if request.port != '80'
   end
 
   def get_other_locales

@@ -35,11 +35,8 @@
 						<% @nav_actions.each do |action| %>
             	<li class="<%= action_name == action ? 'active' : '' %>"><a href="<%= action_name == action ? '#' : "/#{action}" %>"><%= t("#{controller_name}.#{action}.title") %></a></li>
 						<% end %>
-						<%# TODO: Remove this once translation for home page is gtg %>
-						<% if request.path == '/battle' %>
-							<% @other_locales.each do |l| %>
-								<li><a href="http://<%= t('prefix', :locale => l) %>.<%= @no_lang_host %><%= request.path %>"><img class="flag-icon" src="/assets/<%= l.to_s %>_icon.png"><%= t('lang_name', :locale => l) %></a></li>
-							<% end %>
+						<% @other_locales.each do |l| %>
+							<li><a href="http://<%= t('prefix', :locale => l) %>.<%= @no_lang_host %><%= request.path %>"><img class="flag-icon" src="/assets/<%= l.to_s %>_icon.png"><%= t('lang_name', :locale => l) %></a></li>
 						<% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
